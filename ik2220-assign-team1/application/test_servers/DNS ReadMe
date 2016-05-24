@@ -1,0 +1,5 @@
+1. Inside the script, Change the DNSServer IP to each of the three server IPs
+2. You can optionally change domain to something. I now check for "example.com"
+3. Also, I have set a fake IP to 10.9.8.55 - We can change that too for each server
+4. Start this script by adding a line h1.cmd("python DNSServer.py &") to the topology file one for each server after doing the changes.
+5. Dig command can be - dig @<DNSSERVER_IP> <DOMAIN NAME>   [ In our case, it will be Load balancer IP ]
