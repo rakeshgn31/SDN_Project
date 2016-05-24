@@ -4,8 +4,8 @@ AddressInfo(lb1_ext_intf 100.0.0.25 100.0.0.25/24 00:00:45:8C:72:9E);
 AddressInfo(lb1_inter_intf 100.0.0.25 100.0.0.25/24 00:00:12:56:9D:8A);
 
 // Devices to read the packets
-in_ext_dev :: FromDevice(LB1-eth0)
-in_int_dev :: FromDevice(LB1-eth1)
+in_ext_dev :: FromDevice(LB1-eth0, SNIFFER false, METHOD LINUX)
+in_int_dev :: FromDevice(LB1-eth1, SNIFFER false, METHOD LINUX)
 
 // Devices to direct the output
 out_ext_dev :: Queue(200) -> ToDevice(LB1-eth0)
@@ -17,7 +17,6 @@ ip_proto_cls_ext :: IPClassifier(dst udp port 53, icmp, -);
 ip_proto_cls_int :: IPClassifier(udp, icmp, -);
 ip_pkt_cls_ext1, ip_pkt_cls_ext2 :: IPClassifier(dst host 100.0.0.25, -);
 
-
 // Declare the required ARP elements
 arp_resp_ext :: ARPResponder(lb1_ext_intf);
 arp_resp_int :: ARPResponder(lb1_inter_intf);
@@ -25,6 +24,10 @@ arp_quer_ext :: ARPQuerier(lb1_ext_intf);
 arp_quer_int :: ARPQuerier(lb1_inter_intf);
 arp_quer_ext[0] -> out_ext_dev;
 arp_quer_int[0] -> out_int_dev;
+
+// Round robin and IP Rewriter elements
+dnsServMapper::RoundRobinIPMapper(100.0.0.25 - 100.0.0.20 - 0 1, 100.0.0.25 - 100.0.0.21 - 0 1, 100.0.0.25 - 100.0.0.22 - 0 1);
+ip_rwriter::IPRewriter(dnsServMapper,pattern 100.0.0.25 2000-60000 - - 1 0);
 
 // Read the packets and classify them
 in_ext_dev -> [0]pkt_cls_ext;
@@ -45,13 +48,9 @@ pkt_cls_ext[2]
                 -> [0]ip_proto_cls_ext;
 
 // Handle the UDP packets
-dnsServMapper::RoundRobinIPMapper(- - 100.0.0.20 - 0 1, - - 100.0.0.21 - 0 1, - - 100.0.0.22 - 0 1);
-ip_rwriter::IPRewriter(dnsServMapper,pattern 100.0.0.25 2000-60000 - - 1 0);
 ip_proto_cls_ext[0] -> [0]ip_pkt_cls_ext1;
-ip_pkt_cls_ext1[0]   -> [0]ip_rwriter;
-ip_rwriter[0]
-        -> IPPrint("UDP pkt to DNS Server : ")
-        -> arp_quer_int;
+ip_pkt_cls_ext1[0]  -> [0]ip_rwriter;
+ip_rwriter[0] -> arp_quer_int;
 
 // Handle the ICMP packets
 ip_proto_cls_ext[1] -> [0]ip_pkt_cls_ext2;
@@ -70,9 +69,7 @@ pkt_cls_int[2]
 
 // Handle the UDP reply packets
 ip_proto_cls_int[0] -> [1]ip_rwriter;
-ip_rwriter[1]
-        -> IPPrint("Resp. from DNS : ")
-        -> arp_quer_ext;
+ip_rwriter[1] -> Print("Resp. from DNS : ") -> arp_quer_ext;
 
 // Handle the ICMP Packets
 ip_proto_cls_int[1]
@@ -85,4 +82,4 @@ pkt_cls_ext[3]      -> Discard;
 pkt_cls_int[3]      -> Discard;
 ip_proto_cls_ext[2] -> Discard;
 ip_proto_cls_int[2] -> Discard;
-ip_pkt_cls_ext1[1]   -> Discard;
+ip_pkt_cls_ext1[1]  -> Discard;
