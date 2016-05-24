@@ -108,7 +108,7 @@ EXT_IN ->
 //-----------------------Reporting-----------------------------
 DriverManager(pause, wait 2s,
 	print "\n\r NAPT 1 Logs dumped at /tmp/NAT_Report.log :",
-	save "=========================LB1 REPORT========================
+	save "=========================NAPT REPORT========================
 ============External INTERFACE======================
 Input Packet Rate (pps)	:	$(EXT_IN_PKT_ACTR.rate)
 Output Packet Rate (pps):	$(EXT_OUT_PKT_ACTR.rate)
