@@ -1,3 +1,5 @@
+To run this script from Mininet add lines - host.cmd("python <filename> &")
+
 Send following from host :-
 
 Usage::
