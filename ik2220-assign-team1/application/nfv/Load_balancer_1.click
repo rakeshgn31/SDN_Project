@@ -48,9 +48,9 @@ pkt_cls_int[1] -> INT_ARP_RESP_CTR -> [1]arp_quer_int;
 
 // Handle the classified IP Packets for external interface
 pkt_cls_ext[2]
-                -> Strip(14)
-                -> CheckIPHeader
-                -> [0]ip_proto_cls_ext;
+	-> Strip(14)
+	-> CheckIPHeader
+	-> [0]ip_proto_cls_ext;
 
 // Handle the UDP packets
 ip_proto_cls_ext[0] -> EXT_SERV_PKT_CTR -> [0]ip_pkt_cls_ext1;
@@ -63,7 +63,7 @@ ip_pkt_cls_ext2[0]
                   -> IPPrint("ICMP destined to VIP from EXT : ")
                   -> ICMPPingResponder
                   -> arp_quer_ext;
-ip_pkt_cls_ext2[1] -> ICMPError(100.0.0.25, unreachable, host)
+ip_pkt_cls_ext2[1]-> ICMPError(100.0.0.25, unreachable, host)
                   -> arp_quer_ext;
 
 // Handle the classified IP Packets for internal interface
@@ -78,7 +78,7 @@ ip_rwriter[1] -> Print("Resp. from DNS : ") -> arp_quer_ext;
 
 // Handle the ICMP Packets
 ip_proto_cls_int[1]
-				-> INT_ICMP_PKT_CTR
+		-> INT_ICMP_PKT_CTR
                 -> IPPrint("ICMP destined to VIP from INT : ")
                 -> ICMPPingResponder
                 -> arp_quer_int;
