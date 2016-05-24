@@ -97,7 +97,7 @@ DriverManager(pause, wait 2s,
 	save "=========================NAPT Report========================
 ============External INTERFACE======================
 
-Input Packet Rate (pps): 	       $(CTR_FRAME_IN_EXT.rate)
+Input Packet Rate (pps): 	   $(CTR_FRAME_IN_EXT.rate)
 Output Packet Rate (pps):   	   $(CTR_FRAME_OUT_EXT.rate)
 
 Total # of frames in:       	   $(CTR_FRAME_IN_EXT.count)
@@ -108,14 +108,14 @@ Total # of ARP responses:   	   $(CTR_ARP_RES_EXT.count)
 
 Total # of TCP&UDP packets: 	   $(CTR_SERV_EXT.count)
 
-Total # of ICMP packets:   	       $(CTR_ICMP_EXT.count)
+Total # of ICMP packets:   	   $(CTR_ICMP_EXT.count)
 
 Total # of dropped packets: 	   $(CTR_DROP_EXT.count)
 
 
 ============Internal INTERFACE======================
 
-Input Packet Rate (pps): 	       $(CTR_FRAME_IN_INT.rate)        	   
+Input Packet Rate (pps): 	   $(CTR_FRAME_IN_INT.rate)        	   
 Output Packet Rate (pps):   	   $(CTR_FRAME_OUT_INT.rate)       	   
 
 Total # of frames in:       	   $(CTR_FRAME_IN_INT.count)  		   
@@ -126,7 +126,7 @@ Total # of ARP responses:   	   $(CTR_ARP_RES_INT.count)
 
 Total # of TCP&UDP packets: 	   $(CTR_SERV_INT.count)  		       
 
-Total # of ICMP packets:   	       $(CTR_ICMP_INT.count)
+Total # of ICMP packets:   	   $(CTR_ICMP_INT.count)
   		       
 Total # of dropped packets: 	   $(CTR_DROP_INT.count)  		       
 ============================================================
