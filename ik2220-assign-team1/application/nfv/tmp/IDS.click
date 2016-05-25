@@ -1,13 +1,12 @@
 toEth0  :: Queue(200) -> ToDevice(IDS-eth0);
 
-
-FromDevice(IDS-eth1, METHOD LINUX) -> toEth0;
+FromDevice(IDS-eth1) -> toEth0;
 
 IPctr, HTTPctr, DROPctr, ALLOWctr		:: AverageCounter;
 classifier      :: Classifier(12/0800 /* IP packets */, - /* everything else */);
 ip_classifier   :: IPClassifier(dst tcp port 80 and tcp opt ack /* relevant UDP packets */,
                                 - /* everything else */);
-in_device       :: FromDevice(IDS-eth0, METHOD LINUX);
+in_device       :: FromDevice(IDS-eth0);
 out             :: Queue(200) -> ToDevice(IDS-eth1);
 toLogger        :: Queue(200) -> ToDevice(IDS-eth2);
 IDS             :: HTTPRequestInspector("GET-HEAD-OPTIONS-TRACE-DELETE-CONNECT-","cat%20/etc/passwd-cat%20/var/log/-INSERT-UPDATE-DELETE-");
@@ -24,7 +23,6 @@ in_device -> classifier
 classifier[1] -> out;
 ip_classifier[1] -> out;
 IDS[1] -> DROPctr -> toLogger;
-IDS[2] -> EtherMirror -> toEth0;
 DriverManager(pause, wait 2s,
 	print "\n\r IDS Logs dumped at /tmp/IDS.log :",
 	save "=====================IDS Report=====================

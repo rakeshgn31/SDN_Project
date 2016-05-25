@@ -13,10 +13,15 @@ from mininet.link import Intf
 from mininet.node import (Node)
 from mininet.log import setLogLevel, info, error
 from mininet.util import quietRun
+#from subprocess import Popen, PIPE
+import subprocess
+import os
+
 class NFVMiddlebox:
  	
-	def __init__(self,name):
+	def __init__(self,name,clickcode):
         	self.name=name
+		self.clickcodefullpath=clickcode
 	        self.localIfIndex = 0
 		global localInterfaces
 		global remoteInterfaces
@@ -53,10 +58,19 @@ class NFVMiddlebox:
 		_intf = Intf( remoteCandidIntfName, node=Node )
 		return
 
+	def console(self):
+		global process 
+		process = subprocess.Popen(['xterm', '-T', self.name, '-e', 'click', self.clickcodefullpath], preexec_fn = os.setpgrp)
+		return
+
+
+
 	def stop(self):
 		"Gracefully remove links"
 		global localInterfaces
+		global process
 		info( '*** Stopping NFV Middlebox: %s\n' % self.name )
 		for i in range(0,self.localIfIndex):   
 			quietRun('ip link delete ' + localInterfaces[i])
-
+		process.kill()
+		return

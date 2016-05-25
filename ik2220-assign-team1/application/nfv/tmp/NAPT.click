@@ -12,6 +12,10 @@ AddressInfo(INT_ADD 10.0.0.1 00:00:45:8C:72:9E);
 AddressInfo(EXT_ADD 100.0.0.1 00:00:45:5C:82:1A);
 
 //------------------------------------------------------------
+CTR_ICMP_INT, CTR_ARP_REQ_INT, CTR_ARP_RES_INT, CTR_SERV_INT, CTR_FRAME_IN_INT, CTR_FRAME_OUT_INT, CTR_DROP_INT  :: AverageCounter;
+CTR_ICMP_EXT, CTR_ARP_REQ_EXT, CTR_ARP_RES_EXT, CTR_SERV_EXT, CTR_FRAME_IN_EXT, CTR_FRAME_OUT_EXT, CTR_DROP_EXT  :: AverageCounter;
+
+//------------------------------------------------------------
 // Arp Querier for Internal interface
 AQ_INT  ::   ARPQuerier(INT_ADD) -> INT_OUT;
 // Arp Querier for External interface
@@ -87,3 +91,23 @@ EXT_IN ->
 
         EXT_FRAME_CLS[3]
                 -> Discard;
+//-----------------------Reporting-----------------------------
+DriverManager(pause, wait 2s,
+	print "\n\r NAPT Logs dumped at /tmp/NAPT.log :",
+	save "=========================NAPT Report========================
+			      Internal INT    External INT
+Input Packet Rate (pps): 	   $(CTR_FRAME_IN_INT.rate)         	   $(CTR_FRAME_IN_EXT.rate)
+Output Packet Rate (pps):   	   $(CTR_FRAME_OUT_INT.rate)       	   $(CTR_FRAME_OUT_EXT.rate)
+
+Total # of frames in:       	   $(CTR_FRAME_IN_INT.count)  		   $(CTR_FRAME_IN_EXT.count)
+Total # of frames out:      	   $(CTR_FRAME_OUT_INT.count)  		   $(CTR_FRAME_OUT_EXT.count)
+
+Total # of ARP requests:    	   $(CTR_ARP_REQ_INT.count)  		   $(CTR_ARP_REQ_EXT.count)
+Total # of ARP responses:   	   $(CTR_ARP_RES_INT.count) 		   $(CTR_ARP_RES_EXT.count)
+
+Total # of TCP&UDP packets: 	   $(CTR_SERV_INT.count)  		   $(CTR_SERV_EXT.count)
+Total # of ICMP packets:   	   $(CTR_ICMP_INT.count)  		   $(CTR_ICMP_EXT.count)
+Total # of dropped packets: 	   $(CTR_DROP_INT.count)  		   $(CTR_DROP_EXT.count)
+============================================================
+	" /tmp/NAPT.log,
+	stop);

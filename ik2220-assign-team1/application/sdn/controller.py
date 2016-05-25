@@ -14,7 +14,9 @@ class Controller(object):
 
                 data_path_id = dpid_to_str(event.dpid)
                 log.debug("Handling the connection up event for DPID : %s" %data_path_id)
-                if (data_path_id == "00-00-00-00-02-01" or data_path_id == "00-00-00-00-02-02" or data_path_id == "00-00-00-00-02-03" or data_path_id == "00-00-00-00-02-04" or data_path_id == "00-00-00-00-02-05"):
+                if (data_path_id == "00-00-00-00-02-01" or data_path_id == "00-00-00-00-02-02" 
+                        or data_path_id == "00-00-00-00-02-03" or data_path_id == "00-00-00-00-02-04" 
+                        or data_path_id == "00-00-00-00-02-05" or data_path_id == "00-00-00-00-02-08"):
                         LearningSwitch(event.connection, False)
                 elif (data_path_id == "00-00-00-00-02-06"):
                         log.debug("Invoking Firewall 1")
