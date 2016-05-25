@@ -10,8 +10,8 @@ INT_SERV_PKT_CTR, EXT_SERV_PKT_CTR, INT_ICMP_PKT_CTR, EXT_ICMP_PKT_CTR :: Counte
 INT_DROP_CTR1, INT_DROP_CTR2, EXT_DROP_CTR1, EXT_DROP_CTR2, EXT_DROP_CTR3 :: Counter;
 
 // Devices to read the packets
-in_ext_dev :: FromDevice(LB2-eth0, SNIFFER false, METHOD LINUX)
-in_int_dev :: FromDevice(LB2-eth1, SNIFFER false, METHOD LINUX)
+in_ext_dev :: FromDevice(LB2-eth0, METHOD LINUX)
+in_int_dev :: FromDevice(LB2-eth1, METHOD LINUX)
 
 // Devices to direct the output
 out_ext_dev :: Queue(200) -> EXT_OUT_PKT_ACTR -> ToDevice(LB2-eth0)
