@@ -15,9 +15,9 @@ from mininet.util import quietRun
 from mininet.node import RemoteController
 from mininet.node import (Node, Host, OVSKernelSwitch)
 from mininet.link import TCLink
-from nfv import NFVMiddlebox
-from topotester import Tester
-from custcontroller import GR1POX
+from custlib.nfv import NFVMiddlebox
+from custlib.topotester import Tester
+from custlib.custcontroller import GR1POX
 
 class NetworkTopo( Topo ):
     "A simple topology of a router with three subnets (one host in each)."
