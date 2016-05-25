@@ -1,0 +1,83 @@
+=====================Task2 results=======================
+
+=========================================================
+Ping between h1 and h3 ::::: Openflow table entry
+=========================================================
+mininet> h1 ping -c 4 h3
+PING 100.0.0.50 (100.0.0.50) 56(84) bytes of data.
+
+--- 100.0.0.50 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3024ms
+
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+mininet>
+==========================================================
+Ping between h3 and h1 ::::: Openflow table entry
+==========================================================
+mininet> h3 ping -c 4 h1
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+64 bytes from 100.0.0.10: icmp_seq=1 ttl=64 time=20.3 ms
+64 bytes from 100.0.0.10: icmp_seq=2 ttl=64 time=0.356 ms
+64 bytes from 100.0.0.10: icmp_seq=3 ttl=64 time=0.035 ms
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=64 time=0.035 ms
+
+--- 100.0.0.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 0.035/5.194/20.350/8.751 ms
+
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=5.838s, table=0, n_packets=4, n_bytes=392, idle_timeout=10, hard_timeout=30, idle_age=2, priority=65535,icmp,in_port=2,vlan_tci=0x0000,dl_src=1a:57:1a:14:f8:d6,dl_dst=ba:1d:6f:d1:32:65,nw_src=100.0.0.50,nw_dst=100.0.0.10,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:1
+ cookie=0x0, duration=5.832s, table=0, n_packets=4, n_bytes=392, idle_timeout=10, hard_timeout=30, idle_age=2, priority=65535,icmp,in_port=1,vlan_tci=0x0000,dl_src=ba:1d:6f:d1:32:65,dl_dst=1a:57:1a:14:f8:d6,nw_src=100.0.0.10,nw_dst=100.0.0.50,nw_tos=0,icmp_type=0,icmp_code=0 actions=output:2
+mininet>
+==========================================================
+Data sent from h4 to h2 ::::: Openflow table entry
+==========================================================
+On H2:
+
+root@click:/opt/ik2220/pox/ext/task2# iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 22] local 100.0.0.11 port 1025 connected with 100.0.0.51 port 51893
+[ ID] Interval       Transfer     Bandwidth
+[ 22]  0.0-10.0 sec  27.4 GBytes  23.6 Gbits/sec
+
+On H4:
+
+root@click:/opt/ik2220/pox/ext/task2# iperf -c 100.0.0.11 -p 1025
+------------------------------------------------------------
+Client connecting to 100.0.0.11, TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 21] local 100.0.0.51 port 51893 connected with 100.0.0.11 port 1025
+[ ID] Interval       Transfer     Bandwidth
+[ 21]  0.0-10.0 sec  27.4 GBytes  23.6 Gbits/sec
+
+Flow entry:
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=14.757s, table=0, n_packets=210412, n_bytes=13887200, idle_timeout=10, hard_timeout=30, idle_age=4, priority=65535,tcp,in_port=1,vlan_tci=0x0000,dl_src=7a:c3:f5:5e:44:0b,dl_dst=ba:bf:74:47:ae:ed,nw_src=100.0.0.11,nw_dst=100.0.0.51,nw_tos=0,tp_src=1025,tp_dst=51894 actions=output:2
+ cookie=0x0, duration=14.762s, table=0, n_packets=577700, n_bytes=27605322344, idle_timeout=10, hard_timeout=30, idle_age=4, priority=65535,tcp,in_port=2,vlan_tci=0x0000,dl_src=ba:bf:74:47:ae:ed,dl_dst=7a:c3:f5:5e:44:0b,nw_src=100.0.0.51,nw_dst=100.0.0.11,nw_tos=0,tp_src=51894,tp_dst=1025 actions=output:1
+
+==========================================================
+Data sent from h2 to h4 ::::: Openflow table entry
+==========================================================
+H2:
+root@click:/opt/ik2220/pox/ext/task2# iperf -c 100.0.0.51 -p 1025
+connect failed: Connection timed out
+H4:
+root@click:/opt/ik2220/pox/ext/task2# iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+
+
+Flow entry:
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=9.132s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=9, priority=65535,arp,in_port=2,vlan_tci=0x0000,dl_src=ba:bf:74:47:ae:ed,dl_dst=7a:c3:f5:5e:44:0b,arp_spa=100.0.0.51,arp_tpa=100.0.0.11,arp_op=2 actions=output:1
+ cookie=0x0, duration=9.139s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=9, priority=65535,arp,in_port=1,vlan_tci=0x0000,dl_src=7a:c3:f5:5e:44:0b,dl_dst=ba:bf:74:47:ae:ed,arp_spa=100.0.0.11,arp_tpa=100.0.0.51,arp_op=1 actions=output:2
