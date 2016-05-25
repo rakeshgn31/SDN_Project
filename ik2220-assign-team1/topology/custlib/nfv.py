@@ -73,7 +73,7 @@ class NFVMiddlebox:
 
 	def console(self):
 		global process 
-		process = subprocess.Popen(['xterm', '-T', self.name, '-e', 'click', self.clickcodefullpath], preexec_fn = os.setpgrp)
+		self.process = subprocess.Popen(['xterm', '-T', self.name, '-e', 'click', self.clickcodefullpath], preexec_fn = os.setpgrp)
 		return
 
 	def newPort(self):
@@ -83,9 +83,8 @@ class NFVMiddlebox:
 	def stop(self):
 		"Gracefully remove links"
 		global localInterfaces
-		global process
 		info( '*** Stopping NFV Middlebox: %s\n' % self.name )
 		for i in range(0,self.localIfIndex):   
 			quietRun('ip link delete ' + localInterfaces[i])
-		process.kill()
+		self.process.terminate()
 		return
