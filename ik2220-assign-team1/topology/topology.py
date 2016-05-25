@@ -64,7 +64,6 @@ class NetworkTopo( Topo ):
         self.addLink( sw2, fw2 )
         
         #Extra equip
-        testsw = self.addSwitch( 'sw6', dpid="0000000000000208" )
         inspector = self.addHost( 'insp' )
         
 
@@ -77,7 +76,6 @@ def run():
     LB2 = NFVMiddlebox("LB2","/home/click/click/conf/alpha/LB2.click")
     
     topo = NetworkTopo()
-    #net = Mininet(topo=topo, controller= lambda name: RemoteController( name, defaultIP='127.0.0.1' ),listenPort=6633, )  # POX
     net = Mininet(topo=topo, controller=GR1POX) 
     sw2 = net.getNodeByName('sw2')
     sw3 = net.getNodeByName('sw3')
@@ -85,7 +83,6 @@ def run():
     sw5 = net.getNodeByName('sw5')
     fw1 = net.getNodeByName('fw1')
     fw2 = net.getNodeByName('fw2')
-    #testsw = net.getNodeByName('sw6')
     inspector = net.getNodeByName('insp')
     
     h3 = net.getNodeByName('h3')
@@ -98,14 +95,15 @@ def run():
     IDS.connectTo(sw2)
     IDS.connectTo(LB2)
     IDS.connectTo(inspector)
-    
+    LB2.connectTo(sw4)
+	
     NAPT.connectTo(fw2)
     NAPT.connectTo(sw5)
     
     LB1.connectTo(sw2)
     LB1.connectTo(sw3)
 
-    LB2.connectTo(sw4)
+    
     
     
 
@@ -113,8 +111,7 @@ def run():
     NAPT.console()
     LB1.console()
     LB2.console()
-    
-    
+        
 
     myTester = Tester(net)
     myTester.initServices()
