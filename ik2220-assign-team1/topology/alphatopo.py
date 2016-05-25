@@ -51,20 +51,20 @@ class NetworkTopo( Topo ):
         #Private Zone
         h3 = self.addHost( 'h3', ip='10.0.0.50/24', defaultGateway='10.0.0.1')
         h4 = self.addHost( 'h4', ip='10.0.0.51/24', defaultGateway='10.0.0.1')
-        sw5 = self.addSwitch( 'sw5' )
+        sw5 = self.addSwitch( 'sw5', dpid="0000000000000205" )
         self.addLink( h3, sw5 )
         self.addLink( h4, sw5 )
         
         #Border equipment interconnect
         sw2 = self.addSwitch( 'sw2', dpid="0000000000000202" )
-        fw1 = self.addSwitch( 'fw1', dpid="0000000000000205" )
-        fw2 = self.addSwitch( 'fw2', dpid="0000000000000206" )
+        fw1 = self.addSwitch( 'fw1', dpid="0000000000000206" )
+        fw2 = self.addSwitch( 'fw2', dpid="0000000000000207" )
         self.addLink( sw1, fw1 )
         self.addLink( fw1, sw2 )
         self.addLink( sw2, fw2 )
         
         #Extra equip
-        testsw = self.addSwitch( 'sw6', dpid="0000000000000207" )
+        testsw = self.addSwitch( 'sw6', dpid="0000000000000208" )
         inspector = self.addHost( 'insp' )
         
 
