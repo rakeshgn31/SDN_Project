@@ -21,15 +21,32 @@ import subprocess
 import dpkt
 import time
 import urllib
-
+import sys
 class Tester:
  	
 	def __init__(self, Mininet):
 		self.netInstance = Mininet
 		for host in self.netInstance.hosts:
 			host.cmd ('mkdir -p /tmp/%s' %host.name)
+    		info("---------------------------------------------------------\n")
+		info("---------WELCOME TO AUTOMATED TEST SUITE-----------------\n")
+    	 	info("This suite will perform series of tests and then return to mininet> \n")
+    		info("Would you like to proceed? (Y/n). Choosing n will immediately return to mininet> \n")
+		answer = sys.stdin.read(1)
+		print("aq")
+		print (answer)
+        	if answer.strip().lower() == 'n':
+			self.status = False
+			print("pressed no")
 
+		else:
+			print("pressed yes")
+			self.status = True
+		print("\n")
+    
 	def IDS(self):
+	        if not self.status:
+        	    return
 		IDStester = self.netInstance.getNodeByName('h2')
 		targetSrv = "100.0.0.45"
 		sniffer = self.netInstance.getNodeByName('insp')
@@ -177,6 +194,8 @@ class Tester:
 
 
 	def NAPT(self):
+	        if not self.status:
+        	    return
 		tester = self.netInstance.getNodeByName('h3')
                 pingTarget = self.netInstance.getNodeByName('h1')
                 tcpTarget = self.netInstance.getNodeByName('h2')
@@ -290,6 +309,8 @@ class Tester:
                 info("-------------------------------------------\n")
 
 	def LB(self):
+                if not self.status:
+                    return
                 fetchedContents = " "
                 dnsAnswers= " "
                 global HTTPsrvs
