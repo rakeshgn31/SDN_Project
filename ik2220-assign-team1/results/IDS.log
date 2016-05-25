@@ -1,0 +1,15 @@
+=====================IDS Report=====================
+============External INTERFACE======================
+Input Packet Rate (pps)	: 0.637251382207
+Output Packet Rate (pps): 0.653459898198
+
+Total # of packets		: 51
+Total # of HTTP packets	: 35
+      # of allowed		: 21
+      # of dropped		: 14
+	  
+============Internal INTERFACE======================
+Input Packet Rate (pps)	: 0.500967778663
+Output Packet Rate (pps): 0.51777392919
+====================================================
+	

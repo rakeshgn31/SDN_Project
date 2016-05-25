@@ -1,0 +1,24 @@
+=========================LB1 REPORT========================
+============External INTERFACE======================
+Input Packet Rate (pps)	:	0.368248037507
+Output Packet Rate (pps):	2.35128144839
+
+Total # of ARP requests	:	7
+Total # of ARP responses:	1
+Total # of UDP packets	:	3
+Total # of ICMP packets	:	5
+
+Total # of dropped packets:	$(add( 25 0 0))
+
+============Internal INTERFACE======================
+Input Packet Rate (pps)	:	0.36888358468        	   
+Output Packet Rate (pps):	1.34978789047
+     	   		   
+Total # of ARP requests	:	1  		   
+Total # of ARP responses:	3 		   
+Total # of UDP packets	:	3  		       
+Total # of ICMP packets	:	0
+  		       
+Total # of dropped packets:	$(add( 10 0))
+============================================================
+	

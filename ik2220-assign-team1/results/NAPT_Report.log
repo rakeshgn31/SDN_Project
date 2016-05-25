@@ -1,0 +1,24 @@
+=========================NAPT REPORT========================
+============External INTERFACE======================
+Input Packet Rate (pps)	:	3.79242475157
+Output Packet Rate (pps):	6.9870192143
+
+Total # of ARP requests	:	5
+Total # of ARP responses:	4
+Total # of UDP packets	:	124
+Total # of ICMP packets	:	$(add(0 20))
+
+Total # of dropped packets:	5
+
+============Internal INTERFACE======================
+Input Packet Rate (pps)	:	5.13752574821        	   
+Output Packet Rate (pps):	5.06415739949
+     	   		   
+Total # of ARP requests	:	2  		   
+Total # of ARP responses:	2 		   
+Total # of UDP packets	:	177  		       
+Total # of ICMP packets	:	$(add(0 20))
+  		       
+Total # of dropped packets:	11  		       
+============================================================
+	

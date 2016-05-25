@@ -1,0 +1,24 @@
+=========================LB2 REPORT========================
+============External INTERFACE======================
+Input Packet Rate (pps)	:	0.685847536093
+Output Packet Rate (pps):	0.712953822529
+
+Total # of ARP requests	:	7
+Total # of ARP responses:	2
+Total # of TCP packets	:	27
+Total # of ICMP packets	:	10
+
+Total # of dropped packets:	$(add( 14 0 0))
+
+============Internal INTERFACE======================
+Input Packet Rate (pps)	:	0.761584094917        	   
+Output Packet Rate (pps):	2.27472850015
+     	   		   
+Total # of ARP requests	:	1  		   
+Total # of ARP responses:	3 		   
+Total # of TCP packets	:	24  		       
+Total # of ICMP packets	:	0
+  		       
+Total # of dropped packets:	$(add( 10 0))
+============================================================
+	
