@@ -26,6 +26,7 @@ class Tester:
  	
 	def __init__(self, Mininet):
 		self.netInstance = Mininet
+		self.status = True
 		for host in self.netInstance.hosts:
 			host.cmd ('mkdir -p /tmp/%s' %host.name)
     		info("---------------------------------------------------------\n")
@@ -33,15 +34,9 @@ class Tester:
     	 	info("This suite will perform series of tests and then return to mininet> \n")
     		info("Would you like to proceed? (Y/n). Choosing n will immediately return to mininet> \n")
 		answer = sys.stdin.read(1)
-		print("aq")
-		print (answer)
-        	if answer.strip().lower() == 'n':
+		if answer.strip().lower() == 'n':
 			self.status = False
-			print("pressed no")
-
-		else:
-			print("pressed yes")
-			self.status = True
+		
 		print("\n")
     
 	def IDS(self):
