@@ -16,6 +16,8 @@ from mininet.util import quietRun, moveIntf
 #from subprocess import Popen, PIPE
 import subprocess
 import os
+import signal
+
 
 class NFVMiddlebox:
  	
@@ -72,7 +74,7 @@ class NFVMiddlebox:
 		return
 
 	def console(self):
-		global process 
+		
 		self.process = subprocess.Popen(['xterm', '-T', self.name, '-e', 'click', self.clickcodefullpath], preexec_fn = os.setpgrp)
 		return
 
@@ -86,5 +88,8 @@ class NFVMiddlebox:
 		info( '*** Stopping NFV Middlebox: %s\n' % self.name )
 		for i in range(0,self.localIfIndex):   
 			quietRun('ip link delete ' + localInterfaces[i])
-		self.process.terminate()
+		#self.process.kill(signal.CTRL_C_EVENT, 1)
+		#self.process.send_signal(signal.SIGINT)
+		os.killpg(self.process.pid, signal.SIGTERM)
+		#os.kill(self.process.pid)
 		return

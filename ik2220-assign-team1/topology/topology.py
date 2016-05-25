@@ -71,6 +71,13 @@ class NetworkTopo( Topo ):
 
 
 def run():
+    print("------------------------------WELCOME------------------------------")
+    print("This session requires you to have X11 forwarding enabled and X11 client up and running.")
+    print("The console of each network function will pop up via X11 once mininet starts.")
+    print("Once you make sure your X11 settings are correct and X11 is running, press any key to continue....")
+    print("-------------------------------------------------------------------")
+    sys.stdin.read(1)
+
     #dummy = NFVMiddlebox("dummy","/home/click/click/conf/dummy_bridge.click")
     IDS = NFVMiddlebox("IDS","/home/click/click/conf/alpha/IDS.click")
     NAPT = NFVMiddlebox("NAPT","/home/click/click/conf/alpha/NAPT.click")
@@ -124,7 +131,10 @@ def run():
     myTester.NAPT()
     myTester.LB()
     myTester.IDS()
-
+    print("------------------------------WARNING------------------------------")
+    print("Typing exit in mininet will cause middleboxes shutdown without generating logs!")
+    print("If you want the logs dumped, do Ctrl+C in each xming xterm session")
+    print("-------------------------------------------------------------------")
     CLI( net )
     net.stop()
     IDS.stop()
