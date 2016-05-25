@@ -17,6 +17,7 @@ from mininet.node import (Node, Host, OVSKernelSwitch)
 from mininet.link import TCLink
 from nfv import NFVMiddlebox
 from topotester import Tester
+from custcontroller import GR1POX
 
 class NetworkTopo( Topo ):
     "A simple topology of a router with three subnets (one host in each)."
@@ -77,7 +78,8 @@ def run():
     LB2 = NFVMiddlebox("LB2","/home/click/click/conf/alpha/LB2.click")
     
     topo = NetworkTopo()
-    net = Mininet(topo=topo, controller= lambda name: RemoteController( name, defaultIP='127.0.0.1' ),listenPort=6633, )  # POX
+    #net = Mininet(topo=topo, controller= lambda name: RemoteController( name, defaultIP='127.0.0.1' ),listenPort=6633, )  # POX
+	net = Mininet(topo=topo, controller=GR1POX)
     sw2 = net.getNodeByName('sw2')
     sw3 = net.getNodeByName('sw3')
     sw4 = net.getNodeByName('sw4')
