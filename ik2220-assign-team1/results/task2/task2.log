@@ -1,0 +1,2128 @@
+=====================Task2 results=======================
+
+=========================================================
+Ping between h1 and h3 ::::: Openflow table entry
+=========================================================
+mininet> h1 ping -c 4 h3
+PING 100.0.0.50 (100.0.0.50) 56(84) bytes of data.
+
+--- 100.0.0.50 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3024ms
+
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+mininet>
+mininet> sh ovs-ofctl dump-tables s3
+OFPST_TABLE reply (xid=0x2): 254 tables
+  0: classifier: wild=0x3fffff, max=1000000, active=0
+               lookup=4389210, matched=4389183
+  1: table1  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  2: table2  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  3: table3  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  4: table4  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  5: table5  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  6: table6  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  7: table7  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  8: table8  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  9: table9  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  10: table10 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  11: table11 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  12: table12 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  13: table13 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  14: table14 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  15: table15 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  16: table16 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  17: table17 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  18: table18 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  19: table19 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  20: table20 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  21: table21 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  22: table22 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  23: table23 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  24: table24 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  25: table25 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  26: table26 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  27: table27 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  28: table28 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  29: table29 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  30: table30 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  31: table31 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  32: table32 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  33: table33 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  34: table34 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  35: table35 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  36: table36 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  37: table37 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  38: table38 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  39: table39 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  40: table40 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  41: table41 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  42: table42 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  43: table43 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  44: table44 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  45: table45 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  46: table46 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  47: table47 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  48: table48 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  49: table49 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  50: table50 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  51: table51 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  52: table52 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  53: table53 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  54: table54 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  55: table55 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  56: table56 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  57: table57 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  58: table58 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  59: table59 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  60: table60 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  61: table61 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  62: table62 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  63: table63 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  64: table64 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  65: table65 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  66: table66 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  67: table67 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  68: table68 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  69: table69 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  70: table70 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  71: table71 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  72: table72 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  73: table73 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  74: table74 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  75: table75 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  76: table76 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  77: table77 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  78: table78 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  79: table79 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  80: table80 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  81: table81 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  82: table82 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  83: table83 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  84: table84 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  85: table85 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  86: table86 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  87: table87 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  88: table88 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  89: table89 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  90: table90 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  91: table91 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  92: table92 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  93: table93 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  94: table94 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  95: table95 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  96: table96 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  97: table97 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  98: table98 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  99: table99 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  100: table100: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  101: table101: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  102: table102: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  103: table103: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  104: table104: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  105: table105: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  106: table106: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  107: table107: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  108: table108: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  109: table109: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  110: table110: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  111: table111: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  112: table112: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  113: table113: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  114: table114: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  115: table115: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  116: table116: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  117: table117: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  118: table118: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  119: table119: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  120: table120: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  121: table121: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  122: table122: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  123: table123: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  124: table124: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  125: table125: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  126: table126: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  127: table127: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  128: table128: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  129: table129: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  130: table130: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  131: table131: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  132: table132: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  133: table133: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  134: table134: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  135: table135: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  136: table136: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  137: table137: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  138: table138: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  139: table139: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  140: table140: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  141: table141: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  142: table142: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  143: table143: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  144: table144: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  145: table145: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  146: table146: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  147: table147: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  148: table148: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  149: table149: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  150: table150: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  151: table151: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  152: table152: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  153: table153: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  154: table154: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  155: table155: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  156: table156: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  157: table157: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  158: table158: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  159: table159: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  160: table160: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  161: table161: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  162: table162: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  163: table163: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  164: table164: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  165: table165: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  166: table166: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  167: table167: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  168: table168: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  169: table169: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  170: table170: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  171: table171: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  172: table172: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  173: table173: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  174: table174: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  175: table175: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  176: table176: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  177: table177: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  178: table178: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  179: table179: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  180: table180: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  181: table181: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  182: table182: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  183: table183: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  184: table184: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  185: table185: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  186: table186: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  187: table187: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  188: table188: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  189: table189: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  190: table190: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  191: table191: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  192: table192: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  193: table193: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  194: table194: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  195: table195: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  196: table196: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  197: table197: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  198: table198: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  199: table199: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  200: table200: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  201: table201: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  202: table202: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  203: table203: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  204: table204: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  205: table205: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  206: table206: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  207: table207: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  208: table208: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  209: table209: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  210: table210: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  211: table211: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  212: table212: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  213: table213: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  214: table214: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  215: table215: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  216: table216: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  217: table217: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  218: table218: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  219: table219: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  220: table220: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  221: table221: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  222: table222: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  223: table223: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  224: table224: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  225: table225: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  226: table226: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  227: table227: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  228: table228: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  229: table229: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  230: table230: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  231: table231: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  232: table232: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  233: table233: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  234: table234: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  235: table235: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  236: table236: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  237: table237: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  238: table238: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  239: table239: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  240: table240: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  241: table241: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  242: table242: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  243: table243: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  244: table244: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  245: table245: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  246: table246: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  247: table247: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  248: table248: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  249: table249: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  250: table250: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  251: table251: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  252: table252: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  253: table253: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+
+==========================================================
+Ping between h3 and h1 ::::: Openflow table entry
+==========================================================
+mininet> h3 ping -c 4 h1
+PING 100.0.0.10 (100.0.0.10) 56(84) bytes of data.
+64 bytes from 100.0.0.10: icmp_seq=1 ttl=64 time=20.5 ms
+64 bytes from 100.0.0.10: icmp_seq=2 ttl=64 time=0.319 ms
+64 bytes from 100.0.0.10: icmp_seq=3 ttl=64 time=0.034 ms
+64 bytes from 100.0.0.10: icmp_seq=4 ttl=64 time=0.034 ms
+
+--- 100.0.0.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 0.034/5.233/20.545/8.841 ms
+mininet> sh ovs-ofctl dump-tables s3
+OFPST_TABLE reply (xid=0x2): 254 tables
+  0: classifier: wild=0x3fffff, max=1000000, active=4
+               lookup=4389240, matched=4389209
+  1: table1  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  2: table2  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  3: table3  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  4: table4  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  5: table5  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  6: table6  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  7: table7  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  8: table8  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  9: table9  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  10: table10 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  11: table11 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  12: table12 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  13: table13 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  14: table14 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  15: table15 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  16: table16 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  17: table17 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  18: table18 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  19: table19 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  20: table20 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  21: table21 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  22: table22 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  23: table23 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  24: table24 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  25: table25 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  26: table26 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  27: table27 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  28: table28 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  29: table29 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  30: table30 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  31: table31 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  32: table32 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  33: table33 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  34: table34 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  35: table35 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  36: table36 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  37: table37 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  38: table38 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  39: table39 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  40: table40 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  41: table41 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  42: table42 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  43: table43 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  44: table44 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  45: table45 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  46: table46 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  47: table47 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  48: table48 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  49: table49 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  50: table50 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  51: table51 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  52: table52 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  53: table53 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  54: table54 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  55: table55 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  56: table56 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  57: table57 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  58: table58 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  59: table59 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  60: table60 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  61: table61 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  62: table62 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  63: table63 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  64: table64 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  65: table65 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  66: table66 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  67: table67 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  68: table68 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  69: table69 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  70: table70 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  71: table71 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  72: table72 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  73: table73 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  74: table74 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  75: table75 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  76: table76 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  77: table77 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  78: table78 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  79: table79 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  80: table80 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  81: table81 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  82: table82 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  83: table83 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  84: table84 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  85: table85 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  86: table86 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  87: table87 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  88: table88 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  89: table89 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  90: table90 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  91: table91 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  92: table92 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  93: table93 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  94: table94 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  95: table95 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  96: table96 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  97: table97 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  98: table98 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  99: table99 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  100: table100: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  101: table101: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  102: table102: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  103: table103: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  104: table104: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  105: table105: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  106: table106: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  107: table107: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  108: table108: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  109: table109: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  110: table110: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  111: table111: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  112: table112: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  113: table113: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  114: table114: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  115: table115: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  116: table116: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  117: table117: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  118: table118: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  119: table119: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  120: table120: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  121: table121: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  122: table122: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  123: table123: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  124: table124: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  125: table125: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  126: table126: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  127: table127: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  128: table128: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  129: table129: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  130: table130: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  131: table131: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  132: table132: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  133: table133: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  134: table134: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  135: table135: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  136: table136: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  137: table137: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  138: table138: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  139: table139: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  140: table140: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  141: table141: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  142: table142: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  143: table143: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  144: table144: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  145: table145: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  146: table146: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  147: table147: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  148: table148: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  149: table149: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  150: table150: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  151: table151: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  152: table152: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  153: table153: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  154: table154: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  155: table155: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  156: table156: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  157: table157: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  158: table158: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  159: table159: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  160: table160: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  161: table161: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  162: table162: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  163: table163: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  164: table164: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  165: table165: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  166: table166: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  167: table167: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  168: table168: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  169: table169: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  170: table170: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  171: table171: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  172: table172: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  173: table173: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  174: table174: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  175: table175: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  176: table176: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  177: table177: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  178: table178: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  179: table179: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  180: table180: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  181: table181: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  182: table182: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  183: table183: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  184: table184: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  185: table185: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  186: table186: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  187: table187: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  188: table188: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  189: table189: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  190: table190: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  191: table191: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  192: table192: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  193: table193: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  194: table194: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  195: table195: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  196: table196: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  197: table197: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  198: table198: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  199: table199: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  200: table200: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  201: table201: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  202: table202: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  203: table203: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  204: table204: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  205: table205: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  206: table206: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  207: table207: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  208: table208: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  209: table209: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  210: table210: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  211: table211: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  212: table212: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  213: table213: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  214: table214: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  215: table215: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  216: table216: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  217: table217: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  218: table218: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  219: table219: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  220: table220: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  221: table221: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  222: table222: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  223: table223: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  224: table224: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  225: table225: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  226: table226: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  227: table227: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  228: table228: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  229: table229: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  230: table230: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  231: table231: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  232: table232: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  233: table233: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  234: table234: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  235: table235: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  236: table236: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  237: table237: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  238: table238: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  239: table239: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  240: table240: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  241: table241: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  242: table242: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  243: table243: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  244: table244: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  245: table245: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  246: table246: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  247: table247: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  248: table248: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  249: table249: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  250: table250: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  251: table251: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  252: table252: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  253: table253: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=6.023s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=6, priority=65535,arp,in_port=2,vlan_tci=0x0000,dl_src=ea:e8:35:d9:55:33,dl_dst=06:ca:cb:a1:8b:73,arp_spa=100.0.0.50,arp_tpa=100.0.0.10,arp_op=2 actions=output:1
+ cookie=0x0, duration=6.029s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=6, priority=65535,arp,in_port=1,vlan_tci=0x0000,dl_src=06:ca:cb:a1:8b:73,dl_dst=ea:e8:35:d9:55:33,arp_spa=100.0.0.10,arp_tpa=100.0.0.50,arp_op=1 actions=output:2
+ cookie=0x0, duration=11.071s, table=0, n_packets=4, n_bytes=392, idle_timeout=10, hard_timeout=30, idle_age=8, priority=65535,icmp,in_port=2,vlan_tci=0x0000,dl_src=ea:e8:35:d9:55:33,dl_dst=06:ca:cb:a1:8b:73,nw_src=100.0.0.50,nw_dst=100.0.0.10,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:1
+ cookie=0x0, duration=11.066s, table=0, n_packets=4, n_bytes=392, idle_timeout=10, hard_timeout=30, idle_age=8, priority=65535,icmp,in_port=1,vlan_tci=0x0000,dl_src=06:ca:cb:a1:8b:73,dl_dst=ea:e8:35:d9:55:33,nw_src=100.0.0.10,nw_dst=100.0.0.50,nw_tos=0,icmp_type=0,icmp_code=0 actions=output:2
+mininet>
+
+==========================================================
+Data sent from h4 to h2 ::::: Openflow table entry
+==========================================================
+On H2:
+
+root@click:/opt/ik2220/pox/ext/task2# iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 22] local 100.0.0.11 port 1025 connected with 100.0.0.51 port 51971
+[ ID] Interval       Transfer     Bandwidth
+[ 22]  0.0-10.1 sec  5.55 GBytes  4.74 Gbits/sec
+
+On H4:
+
+root@click:/opt/ik2220/pox/ext/task2# iperf -c 100.0.0.11 -p 1025
+------------------------------------------------------------
+Client connecting to 100.0.0.11, TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 21] local 100.0.0.51 port 51971 connected with 100.0.0.11 port 1025
+[ ID] Interval       Transfer     Bandwidth
+[ 21]  0.0-10.0 sec  5.55 GBytes  4.76 Gbits/sec
+
+Flow entry:
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=14.757s, table=0, n_packets=210412, n_bytes=13887200, idle_timeout=10, hard_timeout=30, idle_age=4, priority=65535,tcp,in_port=1,vlan_tci=0x0000,dl_src=7a:c3:f5:5e:44:0b,dl_dst=ba:bf:74:47:ae:ed,nw_src=100.0.0.11,nw_dst=100.0.0.51,nw_tos=0,tp_src=1025,tp_dst=51894 actions=output:2
+ cookie=0x0, duration=14.762s, table=0, n_packets=577700, n_bytes=27605322344, idle_timeout=10, hard_timeout=30, idle_age=4, priority=65535,tcp,in_port=2,vlan_tci=0x0000,dl_src=ba:bf:74:47:ae:ed,dl_dst=7a:c3:f5:5e:44:0b,nw_src=100.0.0.51,nw_dst=100.0.0.11,nw_tos=0,tp_src=51894,tp_dst=1025 actions=output:1
+mininet> sh ovs-ofctl dump-tables s3
+OFPST_TABLE reply (xid=0x2): 254 tables
+  0: classifier: wild=0x3fffff, max=1000000, active=2
+               lookup=4800037, matched=4799978
+  1: table1  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  2: table2  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  3: table3  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  4: table4  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  5: table5  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  6: table6  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  7: table7  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  8: table8  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  9: table9  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  10: table10 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  11: table11 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  12: table12 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  13: table13 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  14: table14 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  15: table15 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  16: table16 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  17: table17 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  18: table18 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  19: table19 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  20: table20 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  21: table21 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  22: table22 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  23: table23 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  24: table24 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  25: table25 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  26: table26 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  27: table27 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  28: table28 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  29: table29 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  30: table30 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  31: table31 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  32: table32 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  33: table33 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  34: table34 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  35: table35 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  36: table36 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  37: table37 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  38: table38 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  39: table39 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  40: table40 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  41: table41 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  42: table42 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  43: table43 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  44: table44 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  45: table45 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  46: table46 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  47: table47 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  48: table48 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  49: table49 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  50: table50 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  51: table51 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  52: table52 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  53: table53 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  54: table54 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  55: table55 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  56: table56 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  57: table57 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  58: table58 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  59: table59 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  60: table60 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  61: table61 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  62: table62 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  63: table63 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  64: table64 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  65: table65 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  66: table66 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  67: table67 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  68: table68 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  69: table69 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  70: table70 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  71: table71 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  72: table72 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  73: table73 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  74: table74 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  75: table75 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  76: table76 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  77: table77 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  78: table78 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  79: table79 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  80: table80 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  81: table81 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  82: table82 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  83: table83 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  84: table84 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  85: table85 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  86: table86 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  87: table87 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  88: table88 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  89: table89 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  90: table90 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  91: table91 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  92: table92 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  93: table93 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  94: table94 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  95: table95 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  96: table96 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  97: table97 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  98: table98 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  99: table99 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  100: table100: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  101: table101: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  102: table102: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  103: table103: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  104: table104: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  105: table105: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  106: table106: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  107: table107: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  108: table108: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  109: table109: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  110: table110: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  111: table111: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  112: table112: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  113: table113: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  114: table114: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  115: table115: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  116: table116: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  117: table117: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  118: table118: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  119: table119: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  120: table120: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  121: table121: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  122: table122: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  123: table123: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  124: table124: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  125: table125: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  126: table126: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  127: table127: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  128: table128: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  129: table129: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  130: table130: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  131: table131: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  132: table132: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  133: table133: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  134: table134: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  135: table135: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  136: table136: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  137: table137: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  138: table138: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  139: table139: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  140: table140: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  141: table141: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  142: table142: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  143: table143: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  144: table144: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  145: table145: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  146: table146: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  147: table147: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  148: table148: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  149: table149: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  150: table150: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  151: table151: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  152: table152: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  153: table153: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  154: table154: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  155: table155: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  156: table156: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  157: table157: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  158: table158: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  159: table159: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  160: table160: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  161: table161: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  162: table162: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  163: table163: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  164: table164: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  165: table165: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  166: table166: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  167: table167: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  168: table168: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  169: table169: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  170: table170: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  171: table171: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  172: table172: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  173: table173: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  174: table174: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  175: table175: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  176: table176: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  177: table177: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  178: table178: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  179: table179: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  180: table180: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  181: table181: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  182: table182: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  183: table183: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  184: table184: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  185: table185: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  186: table186: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  187: table187: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  188: table188: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  189: table189: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  190: table190: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  191: table191: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  192: table192: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  193: table193: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  194: table194: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  195: table195: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  196: table196: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  197: table197: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  198: table198: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  199: table199: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  200: table200: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  201: table201: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  202: table202: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  203: table203: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  204: table204: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  205: table205: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  206: table206: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  207: table207: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  208: table208: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  209: table209: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  210: table210: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  211: table211: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  212: table212: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  213: table213: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  214: table214: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  215: table215: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  216: table216: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  217: table217: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  218: table218: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  219: table219: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  220: table220: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  221: table221: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  222: table222: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  223: table223: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  224: table224: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  225: table225: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  226: table226: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  227: table227: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  228: table228: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  229: table229: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  230: table230: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  231: table231: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  232: table232: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  233: table233: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  234: table234: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  235: table235: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  236: table236: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  237: table237: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  238: table238: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  239: table239: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  240: table240: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  241: table241: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  242: table242: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  243: table243: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  244: table244: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  245: table245: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  246: table246: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  247: table247: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  248: table248: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  249: table249: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  250: table250: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  251: table251: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  252: table252: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  253: table253: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+mininet>
+
+==========================================================
+Data sent from h2 to h4 ::::: Openflow table entry
+==========================================================
+H2:
+root@click:/opt/ik2220/pox/ext/task2# iperf -c 100.0.0.51 -p 1025
+connect failed: Connection timed out
+H4:
+root@click:/opt/ik2220/pox/ext/task2# iperf -s -p 1025
+------------------------------------------------------------
+Server listening on TCP port 1025
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+
+
+Flow entry:
+mininet> sh ovs-ofctl dump-tables s3
+OFPST_TABLE reply (xid=0x2): 254 tables
+  0: classifier: wild=0x3fffff, max=1000000, active=0
+               lookup=4800043, matched=4799981
+  1: table1  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  2: table2  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  3: table3  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  4: table4  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  5: table5  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  6: table6  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  7: table7  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  8: table8  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  9: table9  : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  10: table10 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  11: table11 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  12: table12 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  13: table13 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  14: table14 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  15: table15 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  16: table16 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  17: table17 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  18: table18 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  19: table19 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  20: table20 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  21: table21 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  22: table22 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  23: table23 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  24: table24 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  25: table25 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  26: table26 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  27: table27 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  28: table28 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  29: table29 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  30: table30 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  31: table31 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  32: table32 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  33: table33 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  34: table34 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  35: table35 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  36: table36 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  37: table37 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  38: table38 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  39: table39 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  40: table40 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  41: table41 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  42: table42 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  43: table43 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  44: table44 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  45: table45 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  46: table46 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  47: table47 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  48: table48 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  49: table49 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  50: table50 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  51: table51 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  52: table52 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  53: table53 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  54: table54 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  55: table55 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  56: table56 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  57: table57 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  58: table58 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  59: table59 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  60: table60 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  61: table61 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  62: table62 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  63: table63 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  64: table64 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  65: table65 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  66: table66 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  67: table67 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  68: table68 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  69: table69 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  70: table70 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  71: table71 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  72: table72 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  73: table73 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  74: table74 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  75: table75 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  76: table76 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  77: table77 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  78: table78 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  79: table79 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  80: table80 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  81: table81 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  82: table82 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  83: table83 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  84: table84 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  85: table85 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  86: table86 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  87: table87 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  88: table88 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  89: table89 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  90: table90 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  91: table91 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  92: table92 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  93: table93 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  94: table94 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  95: table95 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  96: table96 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  97: table97 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  98: table98 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  99: table99 : wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  100: table100: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  101: table101: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  102: table102: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  103: table103: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  104: table104: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  105: table105: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  106: table106: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  107: table107: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  108: table108: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  109: table109: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  110: table110: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  111: table111: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  112: table112: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  113: table113: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  114: table114: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  115: table115: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  116: table116: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  117: table117: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  118: table118: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  119: table119: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  120: table120: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  121: table121: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  122: table122: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  123: table123: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  124: table124: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  125: table125: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  126: table126: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  127: table127: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  128: table128: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  129: table129: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  130: table130: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  131: table131: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  132: table132: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  133: table133: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  134: table134: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  135: table135: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  136: table136: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  137: table137: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  138: table138: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  139: table139: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  140: table140: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  141: table141: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  142: table142: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  143: table143: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  144: table144: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  145: table145: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  146: table146: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  147: table147: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  148: table148: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  149: table149: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  150: table150: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  151: table151: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  152: table152: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  153: table153: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  154: table154: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  155: table155: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  156: table156: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  157: table157: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  158: table158: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  159: table159: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  160: table160: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  161: table161: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  162: table162: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  163: table163: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  164: table164: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  165: table165: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  166: table166: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  167: table167: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  168: table168: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  169: table169: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  170: table170: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  171: table171: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  172: table172: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  173: table173: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  174: table174: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  175: table175: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  176: table176: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  177: table177: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  178: table178: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  179: table179: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  180: table180: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  181: table181: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  182: table182: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  183: table183: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  184: table184: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  185: table185: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  186: table186: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  187: table187: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  188: table188: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  189: table189: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  190: table190: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  191: table191: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  192: table192: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  193: table193: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  194: table194: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  195: table195: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  196: table196: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  197: table197: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  198: table198: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  199: table199: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  200: table200: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  201: table201: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  202: table202: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  203: table203: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  204: table204: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  205: table205: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  206: table206: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  207: table207: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  208: table208: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  209: table209: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  210: table210: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  211: table211: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  212: table212: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  213: table213: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  214: table214: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  215: table215: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  216: table216: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  217: table217: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  218: table218: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  219: table219: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  220: table220: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  221: table221: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  222: table222: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  223: table223: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  224: table224: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  225: table225: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  226: table226: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  227: table227: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  228: table228: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  229: table229: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  230: table230: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  231: table231: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  232: table232: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  233: table233: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  234: table234: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  235: table235: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  236: table236: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  237: table237: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  238: table238: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  239: table239: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  240: table240: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  241: table241: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  242: table242: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  243: table243: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  244: table244: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  245: table245: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  246: table246: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  247: table247: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  248: table248: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  249: table249: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  250: table250: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  251: table251: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  252: table252: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+  253: table253: wild=0x3fffff, max=1000000, active=0
+               lookup=0, matched=0
+mininet> sh ovs-ofctl dump-flows s3
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=7.007s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=7, priority=65535,arp,in_port=1,vlan_tci=0x0000,dl_src=fe:46:4a:00:ba:a6,dl_dst=96:1b:58:fd:19:5a,arp_spa=100.0.0.11,arp_tpa=100.0.0.51,arp_op=1 actions=output:2
+ cookie=0x0, duration=7s, table=0, n_packets=1, n_bytes=42, idle_timeout=10, hard_timeout=30, idle_age=7, priority=65535,arp,in_port=2,vlan_tci=0x0000,dl_src=96:1b:58:fd:19:5a,dl_dst=fe:46:4a:00:ba:a6,arp_spa=100.0.0.51,arp_tpa=100.0.0.11,arp_op=2 actions=output:1
+mininet>
