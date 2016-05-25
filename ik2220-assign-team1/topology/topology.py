@@ -1,7 +1,6 @@
 '''
 Created on May 7, 2016
 
-@author: Huseyin Kayahan
 '''
 import re
 import sys
@@ -79,14 +78,14 @@ def run():
     
     topo = NetworkTopo()
     #net = Mininet(topo=topo, controller= lambda name: RemoteController( name, defaultIP='127.0.0.1' ),listenPort=6633, )  # POX
-	net = Mininet(topo=topo, controller=GR1POX)
+    net = Mininet(topo=topo, controller=GR1POX) 
     sw2 = net.getNodeByName('sw2')
     sw3 = net.getNodeByName('sw3')
     sw4 = net.getNodeByName('sw4')
     sw5 = net.getNodeByName('sw5')
     fw1 = net.getNodeByName('fw1')
     fw2 = net.getNodeByName('fw2')
-    testsw = net.getNodeByName('sw6')
+    #testsw = net.getNodeByName('sw6')
     inspector = net.getNodeByName('insp')
     
     h3 = net.getNodeByName('h3')
@@ -97,7 +96,7 @@ def run():
     h4.cmd('route add default gw %s dev %s-eth0' % ("10.0.0.1", h4.name))
 
     IDS.connectTo(sw2)
-    IDS.connectTo(testsw)
+    IDS.connectTo(LB2)
     IDS.connectTo(inspector)
     
     NAPT.connectTo(fw2)
@@ -105,9 +104,11 @@ def run():
     
     LB1.connectTo(sw2)
     LB1.connectTo(sw3)
-    LB2.connectTo(testsw)
+
     LB2.connectTo(sw4)
     
+    
+
     IDS.console()
     NAPT.console()
     LB1.console()
@@ -117,9 +118,7 @@ def run():
 
     myTester = Tester(net)
     myTester.initServices()
-    #LB2.connectTo(switch1)
-    #LB2.connectTo(switch2)
-    #LB2.console()
+    
     net.start()
     myTester.NAPT()
     myTester.LB()

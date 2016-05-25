@@ -10,9 +10,9 @@ Author: Huseyin Kayahan
 """
 
 from mininet.link import Intf
-from mininet.node import (Node)
+from mininet.node import (Node, Host, OVSSwitch)
 from mininet.log import setLogLevel, info, error
-from mininet.util import quietRun
+from mininet.util import quietRun, moveIntf
 #from subprocess import Popen, PIPE
 import subprocess
 import os
@@ -43,11 +43,15 @@ class NFVMiddlebox:
 		quietRun('ip link add ' + localCandidIntfName + ' type veth peer name '  + str(nodeIntf))
 		quietRun('ip link set ' + localCandidIntfName + ' up')
 		quietRun('ip link set ' + str(nodeIntf) + ' up')
-		self.localIfIndex += 1 
-        	info( '*** Connecting NFV Middlebox %s to SDN node %s\n' % (self.name, nodeIntf.rsplit('-', 1)[0]))
+		self.incrIfIndex() 
+        	info( '*** Connecting NFV Middlebox %s to node %s\n' % (self.name, nodeIntf.rsplit('-', 1)[0]))
         	info( '(%s <-> %s)\n' % (localCandidIntfName, nodeIntf) )
 		localInterfaces.append(localCandidIntfName)
 		return
+
+	def incrIfIndex(self):
+		self.localIfIndex += 1
+
 
 	def connectTo(self,Node):
 		"Fetch next available port number on destination node and generate a remote interface name"
@@ -55,7 +59,16 @@ class NFVMiddlebox:
 		"Pass the remote intf name to generate a link"
 		self.createLink(remoteCandidIntfName)
 		"Connect the other end of the created link to the passed mininet node"
-		_intf = Intf( remoteCandidIntfName, node=Node )
+		"""
+		if type(Node) is (Node or Host or OVSSwitch):
+	             _intf = Intf( remoteCandidIntfName, node=Node )
+		     return 	          
+                #Node.incrIfIndex()
+		"""
+		if isinstance(Node, NFVMiddlebox):
+	             Node.incrIfIndex()
+		else:
+                     _intf = Intf( remoteCandidIntfName, node=Node )
 		return
 
 	def console(self):
@@ -63,6 +76,8 @@ class NFVMiddlebox:
 		process = subprocess.Popen(['xterm', '-T', self.name, '-e', 'click', self.clickcodefullpath], preexec_fn = os.setpgrp)
 		return
 
+	def newPort(self):
+		return self.localIfIndex
 
 
 	def stop(self):
