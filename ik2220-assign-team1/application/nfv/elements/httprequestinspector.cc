@@ -102,6 +102,53 @@ bool HTTPRequestInspector::signatureHit(){
 }
 
 
+void HTTPRequestInspector::send_rst(Packet *p, unsigned long seq, int outport) {
+  WritablePacket *rst_pkt;
+  click_ip *iphdr;
+  click_tcp *tcphdr;
+
+  //click_chatter("SENDING RST: port %d seq: %u\n", outport, seq);
+
+  rst_pkt = WritablePacket::make(40);
+  rst_pkt->set_network_header(rst_pkt->data(), 20);
+  iphdr  = rst_pkt->ip_header();
+  tcphdr = rst_pkt->tcp_header();
+
+  tcphdr->th_sport = p->tcp_header()->th_dport;
+  tcphdr->th_dport = p->tcp_header()->th_sport;
+  tcphdr->th_seq   = htonl(seq);
+  tcphdr->th_ack   = htonl(ntohl(p->tcp_header()->th_seq) + 1);
+  tcphdr->th_off   = 5;
+  tcphdr->th_flags  = TH_RST | TH_ACK;
+  tcphdr->th_win   = ntohs(16384);
+  tcphdr->th_urp   = 0;
+  tcphdr->th_sum   = 0;
+
+  memset(iphdr, '\0', 9);
+  iphdr->ip_sum = 0;
+  iphdr->ip_len = htons(20);
+  iphdr->ip_p   = IP_PROTO_TCP;
+  iphdr->ip_src = p->ip_header()->ip_dst;
+  iphdr->ip_dst = p->ip_header()->ip_src;
+
+  //set tcp checksum
+  tcphdr->th_sum = click_in_cksum((unsigned char *)iphdr, 40);
+  iphdr->ip_len = htons(40);
+
+  iphdr->ip_v   = 4;
+  iphdr->ip_hl  = 5;
+  iphdr->ip_id  = htons(0x1234);
+  iphdr->ip_off = 0;
+  iphdr->ip_ttl = 32;
+  iphdr->ip_sum = 0;
+
+  // set ip checksum
+  iphdr->ip_sum = click_in_cksum(rst_pkt->data(), 20);
+
+  output(outport).push(rst_pkt);
+  return;
+}
+
 
 void HTTPRequestInspector::push(int, Packet *p) {
 
@@ -113,6 +160,7 @@ void HTTPRequestInspector::push(int, Packet *p) {
         click_chatter("-----------------------------------------------------------------------------------------");
         click_chatter("\n");
         output(1).push(p);
+	send_rst(p,1,2);
 	}
         else { 
         click_chatter("Action: Pass");

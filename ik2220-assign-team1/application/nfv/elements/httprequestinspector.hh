@@ -10,11 +10,12 @@ class HTTPRequestInspector : public Element {
 	        HTTPRequestInspector();
                 ~HTTPRequestInspector();
                 const char *class_name() const { return "HTTPRequestInspector"; }
-                const char *port_count() const { return "1/1-2"; }
+                const char *port_count() const { return "1/1-3"; }
                 const char *processing() const { return PUSH; }
                 void push(int, Packet *);
                 int tcpPayloadLen( const Packet *p );
                 bool isHTTPRequest( const Packet *p );
+         	void send_rst(Packet *p, unsigned long seq, int outport);
 		int configure(Vector<String> & , ErrorHandler *) CLICK_COLD;
 		void inputParser(int, String);
 
